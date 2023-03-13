@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "CinemaNow"
 include ':app'
+include ':domain'
