@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/homeItemFragment"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="ifRoom"
+        android:title="Home"/>
+
+    <item android:id="@+id/exploreItemFragment"
+        android:icon="@drawable/ic_explore"
+        app:showAsAction="ifRoom"
+        android:title="Explore"/>
+
+    <item android:id="@+id/liveTvItemFragment"
+        android:icon="@drawable/ic_live_tv"
+        app:showAsAction="ifRoom"
+        android:title="Live TV"/>
+
+    <item android:id="@+id/profileItemFragment"
+        android:icon="@drawable/ic_profile"
+        app:showAsAction="ifRoom"
+        android:title="Profile"/>
+
+
+</menu>
