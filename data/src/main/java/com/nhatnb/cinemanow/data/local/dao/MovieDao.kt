@@ -18,7 +18,7 @@ interface MovieDao {
 
     @Query("DELETE FROM movies")
     suspend fun deleteAllMovies()
-
+    
     @Query("SELECT * FROM movies ORDER BY page DESC LIMIT 1")
     suspend fun getLastTrendingMovie(): MovieDbEntity
 }

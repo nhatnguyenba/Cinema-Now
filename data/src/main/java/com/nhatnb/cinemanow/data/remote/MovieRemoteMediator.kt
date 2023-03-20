@@ -41,6 +41,8 @@ class TrendingMovieRemoteMediator(
             local.deleteAllTrendingMovies()
         }
 
+        println("page: $page")
+
         movieRepository.getTrendingMovies(page).getResult(
             { successResult ->
                 val movies = successResult.data
