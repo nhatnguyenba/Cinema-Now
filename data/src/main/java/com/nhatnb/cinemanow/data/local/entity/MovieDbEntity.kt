@@ -1,6 +1,11 @@
-package com.nhatnb.cinemanow.domain.model
+package com.nhatnb.cinemanow.data.local.entity
 
-data class Movie(
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "movies")
+data class MovieDbEntity(
+    @PrimaryKey
     val id: Int? = null,
     val title: String? = null,
     val genre: String? = null,
@@ -13,5 +18,6 @@ data class Movie(
     val posterUrl: String? = null,
     val trailerUrl: String? = null,
     val language: String? = null,
-    val budget: Int? = null
+    val budget: Int? = null,
+    val page: Int? = null
 )
