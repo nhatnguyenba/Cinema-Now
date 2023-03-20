@@ -1,7 +1,7 @@
-Project Name: Cinema Now
+#Project Name: Cinema Now
 An Android application for viewing movies using Kotlin, MVVM, Clean Architecture, Room, Navigation, Firebase, Hilt, RxJava, Retrofit, Glide, and Kotlin Coroutines.
 
-Description
+#Description
 The Movie App allows users to browse and search for movies, view movie details, and watch movie trailers. Users can also create an account, login, and save their favorite movies. The application is built using the MVVM architectural pattern and follows Clean Architecture principles.
 
 Features and technologies used
