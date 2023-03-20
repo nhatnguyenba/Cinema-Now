@@ -32,9 +32,7 @@ class TrendingMovieRemoteMediator(
             LoadType.APPEND -> { //end of the page
                 println("Vao LoadType.APPEND")
                 val lastPage =
-                    state.lastItemOrNull()?.page.also {
-                        println("page in LoadType.APPEND: $it")
-                    } ?: return MediatorResult.Success(endOfPaginationReached = true)
+                    local.getLastTrendingMovie().page ?: return MediatorResult.Success(endOfPaginationReached = true)
                 lastPage + 1
             }
         }

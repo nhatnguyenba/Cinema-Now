@@ -14,11 +14,11 @@ interface MovieDataSource {
     }
 
     interface Local {
-        //        fun movies(): PagingSource<Int, MovieDbData>
         fun getTrendingMovies(): PagingSource<Int, MovieDbEntity>
         suspend fun getPopularMovies(page: Int? = null, limit: Int? = null): Result<List<Movie>>
         suspend fun getMovie(movieId: Int): Result<Movie>
         suspend fun saveMovies(movieEntities: List<MovieEntity>)
         suspend fun deleteAllTrendingMovies()
+        suspend fun getLastTrendingMovie(): MovieEntity
     }
 }

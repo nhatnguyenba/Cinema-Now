@@ -6,6 +6,7 @@ import com.nhatnb.cinemanow.data.MovieEntity
 import com.nhatnb.cinemanow.data.local.dao.MovieDao
 import com.nhatnb.cinemanow.data.local.entity.MovieDbEntity
 import com.nhatnb.cinemanow.data.mapper.toMovieDbEntity
+import com.nhatnb.cinemanow.data.mapper.toMovieEntity
 import com.nhatnb.cinemanow.domain.model.Movie
 import com.nhatnb.cinemanow.domain.util.Result
 
@@ -30,5 +31,8 @@ class MovieLocalDataSource(private val movieDao: MovieDao): MovieDataSource.Loca
 
     override suspend fun deleteAllTrendingMovies() {
         movieDao.deleteAllMovies()
+    }
+    override suspend fun getLastTrendingMovie(): MovieEntity {
+        return movieDao.getLastTrendingMovie().toMovieEntity()
     }
 }
