@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CinemaNow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_web_client_id" translatable="false">956812826074-clr85uq6lof2pbp150p198b83pnrcsor.apps.googleusercontent.com</string>
+
+    <string name="facebook_app_id">6250264391692752</string>
+    <string name="fb_login_protocol_scheme">fb6250264391692752</string>
+    <string name="facebook_client_token">9fb23e7c34640637f08bc30c5c5126ec</string>
+
+    <string name="movie_api_key">4b70247a521474f157f9fb7320bb7cc9</string>
+
+</resources>

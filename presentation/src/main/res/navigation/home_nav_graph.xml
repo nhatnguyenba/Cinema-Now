@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeItemFragment">
+
+    <fragment
+        android:id="@+id/homeItemFragment"
+        android:name="com.nhatnb.cinemanow.presentation.views.HomeItemFragment"
+        android:label="fragment_home_item"
+        tools:layout="@layout/fragment_home_item" />
+    <fragment
+        android:id="@+id/exploreItemFragment"
+        android:name="com.nhatnb.cinemanow.presentation.views.ExploreItemFragment"
+        android:label="fragment_explore_item"
+        tools:layout="@layout/fragment_explore_item" />
+    <fragment
+        android:id="@+id/liveTvItemFragment"
+        android:name="com.nhatnb.cinemanow.presentation.views.LiveTvItemFragment"
+        android:label="fragment_live_tv_item"
+        tools:layout="@layout/fragment_live_tv_item" />
+    <fragment
+        android:id="@+id/profileItemFragment"
+        android:name="com.nhatnb.cinemanow.presentation.views.ProfileItemFragment"
+        android:label="fragment_profile_item"
+        tools:layout="@layout/fragment_profile_item" />
+</navigation>
