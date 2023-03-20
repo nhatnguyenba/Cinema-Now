@@ -1,10 +1,10 @@
-#Project Name: Cinema Now
+# Project Name: Cinema Now
 An Android application for viewing movies using Kotlin, MVVM, Clean Architecture, Room, Navigation, Firebase, Hilt, RxJava, Retrofit, Glide, and Kotlin Coroutines.
 
-#Description
+# Description
 The Movie App allows users to browse and search for movies, view movie details, and watch movie trailers. Users can also create an account, login, and save their favorite movies. The application is built using the MVVM architectural pattern and follows Clean Architecture principles.
 
-Features and technologies used
+# Features and technologies used
 - Browse and search for movies
 - View movie details and watch trailers
 - Create an account and login
@@ -20,12 +20,12 @@ Features and technologies used
 - Glide for image loading
 - Kotlin Coroutines for asynchronous programming
 
-Installation
+# Installation
 1. Clone the repository.
 2. Open the project in Android Studio.
 3. Build and run the application on a device or emulator.
 
-Usage
+# Usage
 1. Open the application.
 2. Browse and search for movies.
 3. View movie details and watch trailers.
