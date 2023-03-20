@@ -1,67 +1,57 @@
 package com.nhatnb.cinemanow.presentation.views
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.nhatnb.cinemanow.R
+import com.nhatnb.cinemanow.databinding.FragmentHomeItemBinding
+import com.nhatnb.cinemanow.presentation.adapter.MovieListItemAdapter
+import com.nhatnb.cinemanow.presentation.util.launchAndRepeatWithViewLifecycle
+import com.nhatnb.cinemanow.presentation.viewmodel.HomeItemViewModel
+import com.nhatnb.cinemanow.presentation.views.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+@AndroidEntryPoint
+class HomeItemFragment : BaseFragment<FragmentHomeItemBinding>() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeItemFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class HomeItemFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_item, container, false)
+    private val viewModel: HomeItemViewModel by viewModels()
+    private val movieListItemAdapter: MovieListItemAdapter by lazy {
+        MovieListItemAdapter()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Toast.makeText(requireContext(), "HomeItemFragment", Toast.LENGTH_SHORT)
+        setUpViews()
+        setUpListeners()
+        setUpObservers()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeItemFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeItemFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun setUpObservers() {
+        viewModel.trendingMovies.observe{
+            launchAndRepeatWithViewLifecycle {
+                movieListItemAdapter.submitData(it)
             }
+        }
     }
+
+    private fun setUpListeners() {
+
+    }
+
+    private fun setUpViews() {
+        setUpRecycleView()
+    }
+
+    private fun setUpRecycleView() = with(binding.rvTrendingMovies){
+        adapter = movieListItemAdapter
+        layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        setHasFixedSize(true)
+    }
+
+    override fun inflateViewBinding(inflater: LayoutInflater): FragmentHomeItemBinding =
+        FragmentHomeItemBinding.inflate(inflater)
 }

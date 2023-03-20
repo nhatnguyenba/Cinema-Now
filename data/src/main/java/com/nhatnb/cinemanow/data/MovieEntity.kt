@@ -1,6 +1,6 @@
-package com.nhatnb.cinemanow.domain.model
+package com.nhatnb.cinemanow.data
 
-data class Movie(
+data class MovieEntity(
     val id: Int? = null,
     val title: String? = null,
     val genre: String? = null,
@@ -13,5 +13,6 @@ data class Movie(
     val posterUrl: String? = null,
     val trailerUrl: String? = null,
     val language: String? = null,
-    val budget: Int? = null
+    val budget: Int? = null,
+    val page: Int? = null
 )

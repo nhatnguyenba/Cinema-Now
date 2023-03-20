@@ -2,10 +2,10 @@ package com.nhatnb.cinemanow.domain.usecase
 
 import com.nhatnb.cinemanow.domain.model.Movie
 import com.nhatnb.cinemanow.domain.repository.MovieRepository
-import com.nhatnb.cinemanow.domain.util.Result
+import io.reactivex.rxjava3.core.Single
 
-class GetTrendingMovies(
+class GetPopularMovies(
     private val movieRepository: MovieRepository
 ) {
-    suspend operator fun invoke(): Result<List<Movie>> = movieRepository.getTrendingMovies()
+    suspend operator fun invoke(): Single<List<Movie>> = movieRepository.getPopularMovies()
 }
